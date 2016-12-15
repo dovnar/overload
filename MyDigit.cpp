@@ -55,17 +55,108 @@ MyDigit MyDigit::operator+(MyDigit myDigit)
 
 MyDigit MyDigit::operator-=(MyDigit myDigit)
 {
+	MyDigit tempDigit;
+	tempDigit.digit = digit - myDigit.digit;
+	return tempDigit;
+}
 
+MyDigit MyDigit::operator-(MyDigit myDigit)
+{
+	MyDigit tempDigit = *this;
+	tempDigit -= myDigit;
+	return tempDigit;
 }
 
 MyDigit MyDigit::operator*=(MyDigit myDigit)
 {
+	MyDigit tempDigit;
+	tempDigit.digit = digit * myDigit.digit;
+	return tempDigit;
+}
 
+MyDigit MyDigit::operator*(MyDigit myDigit)
+{
+	MyDigit tempDigit = *this;
+	tempDigit *= myDigit;
+	return tempDigit;
 }
 
 MyDigit MyDigit::operator/=(MyDigit myDigit)
 {
+	MyDigit tempDigit;
+	tempDigit.digit = digit / myDigit.digit;
+	return tempDigit;
+}
 
+MyDigit MyDigit::operator/(MyDigit myDigit)
+{
+	MyDigit tempDigit = *this;
+	tempDigit /= myDigit;
+	return tempDigit;
+}
+
+bool MyDigit::operator<(MyDigit myDigit)
+{
+	if (digit < myDigit.digit)
+		return true;
+	else 
+		return false;
+}
+
+bool MyDigit::operator>(MyDigit myDigit)
+{
+	if (digit > myDigit.digit)
+		return true;
+	else
+		return false;
+}
+
+bool MyDigit::operator==(MyDigit myDigit)
+{
+	if (digit == myDigit.digit)
+		return true;
+	else
+		return false;
+}
+
+bool MyDigit::operator!=(MyDigit myDigit)
+{
+	if (digit != myDigit.digit)
+		return true;
+	else
+		return false;
+}
+
+MyDigit MyDigit::operator++()
+{
+	digit++;
+	return digit;
+}
+
+MyDigit MyDigit::operator++(int)
+{
+	MyDigit tmp = *this;
+	digit++;
+	return tmp;
+}
+
+MyDigit MyDigit::operator--()
+{
+	digit++;
+	return digit;
+}
+
+MyDigit MyDigit::operator--(int)
+{
+	MyDigit tmp = *this;
+	digit++;
+	return tmp;
+}
+
+MyDigit MyDigit::operator=(MyDigit myDigit)
+{
+	digit = myDigit.digit;
+	return *this;
 }
 
 MyDigit::~MyDigit()

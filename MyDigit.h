@@ -18,13 +18,26 @@ public:
 	int getDigit();
 	int setDigit(int t);
 	int getCounter();
-	MyDigit operator+(MyDigit);
-	MyDigit operator-(int);
-	MyDigit operator*(int);
-	MyDigit operator/(int);
-	MyDigit operator+=(MyDigit myDigit);
-	MyDigit operator-=(MyDigit myDigit);
-	MyDigit operator*=(MyDigit myDigit);
-	MyDigit operator/=(MyDigit myDigit);
 
+	MyDigit operator+(MyDigit);
+	MyDigit operator-(MyDigit);
+	MyDigit operator*(MyDigit);
+	MyDigit operator/(MyDigit);
+
+	MyDigit operator+=(MyDigit);
+	MyDigit operator-=(MyDigit);
+	MyDigit operator*=(MyDigit);
+	MyDigit operator/=(MyDigit);
+
+	bool operator<(MyDigit);
+	bool operator>(MyDigit);
+	bool operator==(MyDigit);
+	bool operator!=(MyDigit);
+
+	MyDigit operator++();
+	MyDigit operator++(int);
+	MyDigit operator--();
+	MyDigit operator--(int);
+
+	MyDigit operator=(MyDigit);
 };
