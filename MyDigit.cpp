@@ -3,22 +3,22 @@
 
 int MyDigit::counter = 0;
 
-MyDigit::MyDigit()
+MyDigit::MyDigit() : digit(0)
 {
 	++counter;
 }
 
-MyDigit::MyDigit(int)
+MyDigit::MyDigit(int tmp) : digit(tmp)
 {
 	++counter;
 }
 
-MyDigit::MyDigit(double)
+MyDigit::MyDigit(double tmp) : digit((int)tmp)
 {
 	++counter;
 }
 
-MyDigit::MyDigit(MyDigit& myDigit)
+MyDigit::MyDigit(const MyDigit& myDigit)
 {
 	digit = myDigit.digit;
 	++counter;
@@ -29,9 +29,9 @@ int MyDigit::getDigit()
 	return digit;
 }
 
-int MyDigit::setDigit(int t)
+void MyDigit::setDigit(int tmp)
 {
-	digit = t;
+	digit = tmp;
 }
 
 int MyDigit::getCounter()
@@ -159,7 +159,21 @@ MyDigit MyDigit::operator=(MyDigit myDigit)
 	return *this;
 }
 
+MyDigit::operator int()
+{
+	return digit;
+}
+
+MyDigit::operator double()
+{
+	return digit*1.0;
+}
+
+void MyDigit::operator()(int tmp)
+{
+	digit = tmp;
+}
+
 MyDigit::~MyDigit()
 {
-	digit = 0;
 }
