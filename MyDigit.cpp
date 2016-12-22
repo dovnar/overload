@@ -142,14 +142,14 @@ MyDigit MyDigit::operator++(int)
 
 MyDigit MyDigit::operator--()
 {
-	digit++;
+	digit--;
 	return digit;
 }
 
 MyDigit MyDigit::operator--(int)
 {
 	MyDigit tmp = *this;
-	digit++;
+	digit--;
 	return tmp;
 }
 
